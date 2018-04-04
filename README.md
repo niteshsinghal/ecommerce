@@ -1,2 +1,2 @@
-# ecommerce
-E-Ccommerce app using Angular 5 + Angular CLI
+# E-Commerce
+E-Commerce app using Angular 5 + Angular CLI
