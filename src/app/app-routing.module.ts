@@ -1,7 +1,10 @@
+import { LoginComponent } from "./authentication/login/login.component";
+import { SignUpComponent } from "./authentication/sign-up/sign-up.component";
+
 import { HomeComponent } from "./home/home.component";
 import { NgModule, Component } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { SignUpComponent } from "./sign-up/sign-up.component";
+
 import { UserListComponent } from "./user-list/user-list.component";
 import { CartComponent } from "./cart/cart.component";
 
@@ -11,7 +14,8 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "SignUp", component: SignUpComponent },
   { path: "UserList", component: UserListComponent },
-  { path: "Cart", component: CartComponent }
+  { path: "Cart", component: CartComponent },
+  { path: "login", component: LoginComponent }
 ];
 
 @NgModule({
