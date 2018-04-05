@@ -10,6 +10,7 @@ import { UserListComponent } from "./user-list/user-list.component";
 import { CartComponent } from "./cart/cart.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FieldErrorDisplayComponent } from "./field-error-display/field-error-display.component";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { FieldErrorDisplayComponent } from "./field-error-display/field-error-di
     UserListComponent,
     CartComponent,
 
-    FieldErrorDisplayComponent
+    FieldErrorDisplayComponent,
+
+    HomeComponent
   ],
   imports: [
     BrowserModule,

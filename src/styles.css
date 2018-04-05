@@ -6,6 +6,10 @@
   margin-left: 5px;
   top: 7px;
 }
+.home {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
 .container {
   margin-top: 60px;
 }
