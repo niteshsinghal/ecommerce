@@ -1,14 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from "./app-routing.module";
 
-import { AppComponent } from './app.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { CartComponent } from './cart/cart.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FieldErrorDisplayComponent } from './field-error-display/field-error-display.component';
+import { AppComponent } from "./app.component";
+import { SignUpComponent } from "./sign-up/sign-up.component";
+import { UserListComponent } from "./user-list/user-list.component";
+import { CartComponent } from "./cart/cart.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FieldErrorDisplayComponent } from "./field-error-display/field-error-display.component";
 
 @NgModule({
   declarations: [
@@ -16,16 +17,19 @@ import { FieldErrorDisplayComponent } from './field-error-display/field-error-di
     SignUpComponent,
     UserListComponent,
     CartComponent,
-    
-    FieldErrorDisplayComponent,
+
+    FieldErrorDisplayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
+//https://ng-bootstrap.github.io
+//Using above package to resolve issues related to bootstrap.js
