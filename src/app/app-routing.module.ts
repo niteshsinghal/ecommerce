@@ -1,3 +1,4 @@
+import { BlogModule } from "./blog/blog.module";
 import { AuthGuard } from "./_guard/auth-guard.guard";
 import { AuthenticationModule } from "./authentication/authentication.module";
 import { LoginComponent } from "./authentication/login/login.component";
@@ -9,6 +10,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { UserListComponent } from "./user-list/user-list.component";
 import { CartComponent } from "./cart/cart.component";
+import { UserDetailsComponent } from "./user-details/user-details.component";
 
 const routes: Routes = [
   //{ path: "", redirectTo: "home", pathMatch: "full" },
@@ -20,7 +22,13 @@ const routes: Routes = [
     path: "authentication",
     loadChildren: () => AuthenticationModule
     //loadChildren: "app/authentication/authentication.module#AuthenticationModule"
-  }
+  },
+  {
+    path: "blog",
+    loadChildren: () => BlogModule
+  },
+  { path: "UserDetail", component: UserDetailsComponent },
+  { path: "UserDetail/:userId", component: UserDetailsComponent }
 ];
 
 @NgModule({

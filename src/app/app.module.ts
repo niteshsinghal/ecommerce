@@ -1,5 +1,6 @@
+import { BlogModule } from "./blog/blog.module";
 import { AuthenticationService } from "./_services/authentication.service";
-import {UserService} from "./_services/user.service";
+import { UserService } from "./_services/user.service";
 import { AuthenticationModule } from "./authentication/authentication.module";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -14,21 +15,30 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
-import { HttpModule } from '@angular/http';
+import { Http, HttpModule } from "@angular/http";
+import { UserDetailsComponent } from "./user-details/user-details.component";
+import { AuthGuard } from "./_guard/auth-guard.guard";
 
 @NgModule({
-  declarations: [AppComponent, UserListComponent, CartComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    UserListComponent,
+    CartComponent,
+    HomeComponent,
+    UserDetailsComponent
+  ],
   imports: [
-    AuthenticationModule,
     BrowserModule,
-    AppRoutingModule,
+    HttpModule,
     HttpClientModule,
+    AppRoutingModule,
     NgbModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    AuthenticationModule,
+    BlogModule
   ],
-  providers: [AuthenticationService,UserService],
+  providers: [AuthGuard, AuthenticationService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
