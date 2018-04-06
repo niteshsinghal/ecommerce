@@ -15,9 +15,10 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpModule } from '@angular/http';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
-  declarations: [AppComponent, UserListComponent, CartComponent, HomeComponent],
+  declarations: [AppComponent, UserListComponent, CartComponent, HomeComponent, UserDetailsComponent],
   imports: [
     AuthenticationModule,
     BrowserModule,

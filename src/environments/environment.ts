@@ -8,6 +8,7 @@ export const environment = {
   sampleApi: {
     baseUrl: "https://reqres.in/api/",
     login: "login", //Post Request
-    users:"users" // Get User List
+    users:"users", // Get User List
+    userById:"users"// Get User By Id
   }
 };

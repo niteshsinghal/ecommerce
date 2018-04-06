@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from"./../_services/user.service";
-
+import { IUser } from '../_interface/IUser';
+import{UserDetailsComponent} from './../user-details/user-details.component';
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-public userlist
-// =[
-//   {name: "pavan",age:10,profile:"A helpful addition to the standard set of datatypes from JavaScript is the enum. As in languages like C#."},
-//   {name: "rajesh",age:20,profile:"A helpful addition to the standard set of datatypes from JavaScript is the enum. As in languages like C#."},
-//   {name:"Bob",age:25,profile:"A helpful addition to the standard set of datatypes from JavaScript is the enum. As in languages like C#."},
-// ]
-  constructor(private userService: UserService) {
+public userlist:IUser[]
+
+  constructor(private userService: UserService,
+    //private ul:UserDetailsComponent,
+    private router: Router) {
     this.getUserList();
+    
    }  
 
   ngOnInit() {
@@ -27,4 +28,10 @@ public userlist
         this.userlist = data.data; //JSON.parse(data.toString()).data;
       });
     }
+  GetDetails(usr:IUser)
+  {
+    //alert(usr.id);
+    //this.ul.ShowDetails(usr);
+    this.router.navigate(["/UserDetail/" + usr.id.toString()]);
+  }
 }
