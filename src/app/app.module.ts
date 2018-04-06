@@ -1,5 +1,6 @@
 import { AuthenticationService } from "./_services/authentication.service";
-//import { AuthenticationModule } from "./authentication/authentication.module";
+import {UserService} from "./_services/user.service";
+import { AuthenticationModule } from "./authentication/authentication.module";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -13,19 +14,21 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [AppComponent, UserListComponent, CartComponent, HomeComponent],
   imports: [
-    //AuthenticationModule,
+    AuthenticationModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
