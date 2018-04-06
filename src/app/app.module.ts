@@ -1,5 +1,5 @@
 import { AuthenticationService } from "./_services/authentication.service";
-import { AuthenticationModule } from "./authentication/authentication.module";
+//import { AuthenticationModule } from "./authentication/authentication.module";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -17,7 +17,7 @@ import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [AppComponent, UserListComponent, CartComponent, HomeComponent],
   imports: [
-    AuthenticationModule,
+    //AuthenticationModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

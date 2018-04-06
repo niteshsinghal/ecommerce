@@ -8,13 +8,10 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  private isAuthUser: boolean = false;
   constructor(
     private authService: AuthenticationService,
     private router: Router
-  ) {
-    this.isAuthUser = authService.IsAuthenticated;
-  }
+  ) {}
   title = "app";
   logout() {
     this.authService.logout();

@@ -16,3 +16,7 @@
 .dropdown-toggle {
   cursor: pointer;
 }
+.navbar-right {
+  float: right !important;
+  margin-right: -15px;
+}

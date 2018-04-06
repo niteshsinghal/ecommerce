@@ -7,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./home.component.html"
 })
 export class HomeComponent implements OnInit {
-  private welcomeMessage: string = "Home";
+  welcomeMessage: string = "Home";
   constructor(private authService: AuthenticationService) {
     if (authService.IsAuthenticated) {
       this.welcomeMessage = authService.User;
