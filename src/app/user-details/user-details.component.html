@@ -16,7 +16,8 @@
 </div>
   
   <div class="form-group">
-  <label>Avatar</label>
-  <label >{{User.avatar}}</label>
+  <label></label>
+  <a href="#" ><img src="{{User.avatar}}"> </a>
   </div>
+  <a [routerLink]="['/EditUser',User.id]" >Edit</a>
 </div>

@@ -16,9 +16,10 @@ import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpModule } from '@angular/http';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
-  declarations: [AppComponent, UserListComponent, CartComponent, HomeComponent, UserDetailsComponent],
+  declarations: [AppComponent, UserListComponent, CartComponent, HomeComponent, UserDetailsComponent, EditUserComponent],
   imports: [
     AuthenticationModule,
     BrowserModule,
