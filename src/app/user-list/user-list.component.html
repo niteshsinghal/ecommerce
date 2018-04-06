@@ -3,12 +3,12 @@
     <div class="card-deck mb-3 text-center" >
       <div class="card mb-4 box-shadow" *ngFor="let usr of userlist">
         <div class="card-header">
-          <h4 class="my-0 font-weight-normal">{{usr.name}}</h4>
+          <h4 class="my-0 font-weight-normal">{{usr.first_name}}</h4>
         </div>
         <div class="card-body">
-          <h1 class="card-title pricing-card-title">{{usr.age}}</h1>
-      {{usr.profile}}
-          <button type="button" class="btn btn-lg btn-block btn-outline-primary">Profile</button>
+          <h1 class="card-title pricing-card-title">{{usr.last_name}}</h1>
+          <a href="#" class="btn btn-lg btn-block btn-outline-primary"><img src="{{usr.avatar}}"> </a>
+          <button type="button" class="btn btn-lg btn-block btn-outline-primary">Click Me</button>
         </div>
       </div>
   

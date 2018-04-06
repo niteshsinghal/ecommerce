@@ -7,6 +7,7 @@ export const environment = {
   production: false,
   sampleApi: {
     baseUrl: "https://reqres.in/api/",
-    login: "login" //Post Request
+    login: "login", //Post Request
+    users:"users" // Get User List
   }
 };
