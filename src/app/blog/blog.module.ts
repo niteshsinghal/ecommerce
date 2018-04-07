@@ -4,9 +4,9 @@ import { CommonModule } from "@angular/common";
 
 import { BlogRoutingModule } from "./blog-routing.module";
 import { PostsComponent } from "./posts/posts.component";
-
+import { MaterialModule } from "../_shared/material.module";
 @NgModule({
-  imports: [CommonModule, BlogRoutingModule],
+  imports: [CommonModule, BlogRoutingModule, MaterialModule],
   providers: [BlogService],
   declarations: [PostsComponent]
 })

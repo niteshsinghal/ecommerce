@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 .control-label.required:after {
   color: #d00;
   content: "*";
@@ -19,4 +20,24 @@
 .navbar-right {
   float: right !important;
   margin-right: -15px;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  /* max-height: 500px; */
 }

@@ -18,10 +18,19 @@ import { HttpClientModule } from "@angular/common/http";
 import { Http, HttpModule } from "@angular/http";
 import { UserDetailsComponent } from "./user-details/user-details.component";
 import { AuthGuard } from "./_guard/auth-guard.guard";
-import { EditUserComponent } from './edit-user/edit-user.component';
-
+import { EditUserComponent } from "./edit-user/edit-user.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MaterialModule } from "./_shared/material.module";
+//import "hammerjs";
 @NgModule({
-  declarations: [AppComponent, UserListComponent, CartComponent, HomeComponent, UserDetailsComponent, EditUserComponent],
+  declarations: [
+    AppComponent,
+    UserListComponent,
+    CartComponent,
+    HomeComponent,
+    UserDetailsComponent,
+    EditUserComponent
+  ],
   imports: [
     BrowserModule,
     HttpModule,
@@ -30,6 +39,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     NgbModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     AuthenticationModule,
     BlogModule
   ],
