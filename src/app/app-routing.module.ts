@@ -11,6 +11,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { UserListComponent } from "./user-list/user-list.component";
 import { CartComponent } from "./cart/cart.component";
 import { UserDetailsComponent } from "./user-details/user-details.component";
+import { EditUserComponent } from "./edit-user/edit-user.component";
 
 const routes: Routes = [
   //{ path: "", redirectTo: "home", pathMatch: "full" },
@@ -28,7 +29,8 @@ const routes: Routes = [
     loadChildren: () => BlogModule
   },
   { path: "UserDetail", component: UserDetailsComponent },
-  { path: "UserDetail/:userId", component: UserDetailsComponent }
+  { path: "UserDetail/:userId", component: UserDetailsComponent },
+  { path: "EditUser/:userId", component: EditUserComponent }
 ];
 
 @NgModule({
