@@ -27,25 +27,43 @@ export class EditUserComponent implements OnInit {
     });
 
     this.activatedRoute.params.subscribe((params: Params) => {
-       this.userId = params["userId"];
-      console.log(this.userId);
+      debugger; 
+      if(params.length > 0)
+      {
+        this.userId = params["userId"];
+        console.log(this.userId);
+        this.GetDetails();
+      }
+      else
+      {
+        this.loaded = true;
+        this.myEditForm.setValue({"id":4,"first_name":'',"last_name":'',"avatar":''});
+      }
     });
-    this.GetDetails();
+    
   }
   public GetDetails()
   {
     //alert(this.userId);
-    this.userService.getUserById(this.userId).subscribe(data => {
-      //debugger;
-      //alert(data);
-      this.User = data.data; //JSON.parse(data.toString()).data;
-      this.myEditForm.setValue(this.User);
-      console.log(this.myEditForm.value)
-      this.loaded = true;
-      //debugger;
-      //alert(this.User.id);
-      //alert(this.User.first_name);
-    });
+    debugger;
+    if(this.userId != null)
+    { 
+      this.userService.getUserById(this.userId).subscribe(data => {
+        //debugger;
+        //alert(data);
+        this.User = data.data; //JSON.parse(data.toString()).data;
+        this.myEditForm.setValue(this.User);
+        console.log(this.myEditForm.value)
+        this.loaded = true;
+        //debugger;
+        //alert(this.User.id);
+        //alert(this.User.first_name);
+      });
+    }
+    else
+    {
+
+    }
   }
 
   public SaveMe()

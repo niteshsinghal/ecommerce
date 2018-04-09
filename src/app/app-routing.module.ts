@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "UserDetail", component: UserDetailsComponent },
   { path: "UserDetail/:userId", component: UserDetailsComponent },
-  { path: "EditUser/:userId", component: EditUserComponent }
+  { path: "EditUser/:userId", component: EditUserComponent },
+  { path: "EditUser", component: EditUserComponent }
 ];
 
 @NgModule({
