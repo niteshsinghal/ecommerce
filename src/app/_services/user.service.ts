@@ -5,6 +5,7 @@ import { Http, Response } from '@angular/http';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
+import {IUser} from "./../_interface/IUser";
 
 @Injectable()
 export class UserService {
@@ -31,4 +32,13 @@ export class UserService {
           return  res.json()
     });
   }
+
+  UpdateUser(userId:number,user:IUser){
+    let apiUrl = env.sampleApi.baseUrl + env.sampleApi.userById + "/" + userId.toString();
+    return this.http.put(apiUrl,user)
+      .map((res: Response) => { 
+          return  res.json()
+    });
+  }
+
 }
