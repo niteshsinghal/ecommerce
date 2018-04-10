@@ -20,19 +20,15 @@
     <!-- ID Column -->
     <ng-container matColumnDef="userId">
       <mat-header-cell *matHeaderCellDef mat-sort-header>User ID </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.userId}} </mat-cell>
+      <mat-cell *matCellDef="let row" class="cursor-anchor" [routerLink]="['/blog/user',row?.userId]"> {{row.userId}}</mat-cell>
     </ng-container>
 
-    <!-- Progress Column -->
-    <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.id}}% </mat-cell>
-    </ng-container>
 
-    <!-- Name Column -->
+
+    <!-- title Column -->
     <ng-container matColumnDef="title">
       <mat-header-cell *matHeaderCellDef mat-sort-header> TITLE </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.title}} </mat-cell>
+      <mat-cell *matCellDef="let row" class="cursor-anchor" [routerLink]="['/blog/post',row?.id]"> {{row.title}} </mat-cell>
     </ng-container>
 
 

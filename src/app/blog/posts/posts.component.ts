@@ -3,31 +3,35 @@ import { Post } from "./../../_interface/post";
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { BlogService } from "../../_services/blog.service";
 import { MatPaginator, MatSort, MatTableDataSource } from "@angular/material";
+import { Router, ActivatedRoute } from "@angular/router";
 @Component({
   selector: "app-posts",
   templateUrl: "./posts.component.html",
   styles: []
 })
 export class PostsComponent {
+  userId: number = 0;
   posts: Post[];
-  displayedColumns = ["userId", "id", "title"];
+  displayedColumns = ["userId", "title"];
   dataSource: MatTableDataSource<Post>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  populatePosts() {
-    this.blogService.getPosts().subscribe(response => {
-      this.posts = response;
-      this.dataSource = new MatTableDataSource(this.posts);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
+  constructor(
+    private blogService: BlogService,
+    private router: Router,
+    public route: ActivatedRoute
+  ) {
+    this.route.params.subscribe(res => {
+      this.userId = res.id;
     });
-  }
-
-  constructor(private blogService: BlogService) {
     this.dataSource = null;
-    this.populatePosts();
+    if (this.userId > 0) {
+      this.populatePostsByUser();
+    } else {
+      this.populatePosts();
+    }
   }
 
   /**
@@ -41,67 +45,22 @@ export class PostsComponent {
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
+
+  populatePosts() {
+    this.blogService.getPosts().subscribe(response => {
+      this.posts = response;
+      this.dataSource = new MatTableDataSource(this.posts);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
+  }
+
+  populatePostsByUser() {
+    this.blogService.getPostByUser(this.userId).subscribe(response => {
+      this.posts = response;
+      this.dataSource = new MatTableDataSource(this.posts);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
+  }
 }
-
-/** Builds and returns a new User. */
-// function createNewUser(id: number): UserData {
-//   const name =
-//     NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-//     " " +
-//     NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-//     ".";
-
-//   return {
-//     id: id.toString(),
-//     name: name,
-//     progress: Math.round(Math.random() * 100).toString(),
-//     color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-//   };
-// }
-
-/** Constants used to fill up our data base. */
-// const COLORS = [
-//   "maroon",
-//   "red",
-//   "orange",
-//   "yellow",
-//   "olive",
-//   "green",
-//   "purple",
-//   "fuchsia",
-//   "lime",
-//   "teal",
-//   "aqua",
-//   "blue",
-//   "navy",
-//   "black",
-//   "gray"
-// ];
-// const NAMES = [
-//   "Maia",
-//   "Asher",
-//   "Olivia",
-//   "Atticus",
-//   "Amelia",
-//   "Jack",
-//   "Charlotte",
-//   "Theodore",
-//   "Isla",
-//   "Oliver",
-//   "Isabella",
-//   "Jasper",
-//   "Cora",
-//   "Levi",
-//   "Violet",
-//   "Arthur",
-//   "Mia",
-//   "Thomas",
-//   "Elizabeth"
-// ];
-
-// export interface UserData {
-//   id: string;
-//   name: string;
-//   progress: string;
-//   color: string;
-// }

@@ -1,0 +1,33 @@
+<div class="card" *ngIf="postDetailForm">
+    <div class="card-body">
+        <h4 class="card-title">{{postDetailForm.value?.title | titlecase }}</h4>
+        <!-- <h6 class="card-subtitle text-muted">Subtitle</h6> -->
+    </div>
+    <img src="holder.js/100x180/" alt="">
+    <div class="card-body">
+
+        <form [formGroup]="postDetailForm">
+            <div class="form-group">
+                <label for="id">Post ID : </label>
+                <label>{{postDetailForm.value?.id}}</label>
+
+            </div>
+            <div class="form-group">
+                <label for="userId">User ID : </label>
+                <label>
+                    <a [routerLink]="['/blog/user',postDetailForm.value?.userId]"> {{postDetailForm.value?.userId}}</a>
+                </label>
+
+            </div>
+            <div class="form-group">
+                <label for="title ">Title : </label>
+                <input type="text" id="title" formControlName="title" name="title" class="form-control" placeholder="">
+
+            </div>
+            <div class="form-group">
+                <label for="body ">Body : </label>
+                <textarea class="form-control" formControlName="body" name="body" id="body" rows="3"></textarea>
+            </div>
+        </form>
+    </div>
+</div>

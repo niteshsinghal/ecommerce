@@ -14,6 +14,9 @@ export const environment = {
 
   blogApi: {
     baseUrl: "http://jsonplaceholder.typicode.com/",
-    posts: "posts" // Get User By Id
+    posts: "posts", // Get All Posts
+    post: "posts", // Get Single Post
+    users: "users", // Get All Users
+    user: "users" // Get Single User
   }
 };

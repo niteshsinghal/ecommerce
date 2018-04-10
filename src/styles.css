@@ -14,8 +14,12 @@
 .container {
   margin-top: 60px;
 }
-.dropdown-toggle {
+.dropdown-toggle,
+.cursor-anchor {
   cursor: pointer;
+}
+.cursor-anchor {
+  color: dodgerblue !important;
 }
 .navbar-right {
   float: right !important;
@@ -24,7 +28,7 @@
 .example-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .example-header {
@@ -40,4 +44,7 @@
 .mat-table {
   overflow: auto;
   /* max-height: 500px; */
+}
+textarea {
+  height: 200px;
 }

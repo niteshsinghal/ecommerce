@@ -16,4 +16,28 @@ export class BlogService {
       return res.json();
     });
   }
+  public getPost(id: number) {
+    let apiUrl = env.blogApi.baseUrl + env.blogApi.post + "/" + id;
+    return this.http.get(apiUrl).map((res: Response) => {
+      return res.json();
+    });
+  }
+  public getPostByUser(userId: number) {
+    let apiUrl = env.blogApi.baseUrl + env.blogApi.posts + "?userId=" + userId;
+    return this.http.get(apiUrl).map((res: Response) => {
+      return res.json();
+    });
+  }
+  public getUsers() {
+    let apiUrl = env.blogApi.baseUrl + env.blogApi.users;
+    return this.http.get(apiUrl).map((res: Response) => {
+      return res.json();
+    });
+  }
+  public getUser(id: number) {
+    let apiUrl = env.blogApi.baseUrl + env.blogApi.user + "/" + id;
+    return this.http.get(apiUrl).map((res: Response) => {
+      return res.json();
+    });
+  }
 }
