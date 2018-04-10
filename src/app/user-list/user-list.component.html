@@ -1,19 +1,20 @@
-<div class="container">
-  <div class="card-deck mb-3 text-center">
-    <div class="card mb-4 box-shadow" *ngFor="let usr of userlist">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">{{usr.first_name}}</h4>
-      </div>
-      <div class="card-body">
-        <h1 class="card-title pricing-card-title">{{usr.last_name}}</h1>
-        <a href="#" class="btn btn-lg btn-block btn-outline-primary">
-          <img src="{{usr.avatar}}"> </a>
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary" (click)='GetDetails(usr)'>Click Me</button>
-      </div>
-    </div>
-  </div>
 
-  <!-- <div class="row">
+<div class="container" >
+    <div class="card-deck mb-3 text-center" >
+      <div class="card mb-4 box-shadow" *ngFor="let usr of userlist">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">{{usr.first_name}}</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">{{usr.last_name}}</h1>
+          <a href="#" class="btn btn-lg btn-block btn-outline-primary"><img src="{{usr.avatar}}"> </a>
+          <button type="button" class="btn btn-lg btn-block btn-outline-primary" 
+          (click)='GetDetails(usr)'>Click Me</button>
+        </div>
+      </div>
+      <a [routerLink]="['/EditUser']" >Add New User</a>
+    </div>
+<!-- <div class="row">
 <div class="card bg-light mb-3" style="max-width: 18rem;">
     <div class="card-header">Header</div>
     <div class="card-body">
