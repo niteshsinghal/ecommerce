@@ -40,4 +40,19 @@ export class BlogService {
       return res.json();
     });
   }
+
+  public getAlbums() {
+    let apiUrl = env.blogApi.baseUrl + env.blogApi.albums;
+    return this.http.get(apiUrl).map((res: Response) => {
+      return res.json();
+    });
+  }
+
+  public getPhotosByAlbum(albumId: number) {
+    let apiUrl =
+      env.blogApi.baseUrl + env.blogApi.photos + "?albumId=" + albumId;
+    return this.http.get(apiUrl).map((res: Response) => {
+      return res.json();
+    });
+  }
 }

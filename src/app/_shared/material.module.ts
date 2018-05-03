@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -34,6 +35,7 @@ import {
   MatStepperModule
 } from "@angular/material";
 import { CdkTableModule } from "@angular/cdk/table";
+import { ModalDialogComponent } from "./modal-dialog/modal-dialog.component";
 
 @NgModule({
   imports: [
@@ -69,7 +71,10 @@ import { CdkTableModule } from "@angular/cdk/table";
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    CdkTableModule
+    CdkTableModule,
+
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatAutocompleteModule,
@@ -104,6 +109,7 @@ import { CdkTableModule } from "@angular/cdk/table";
     MatToolbarModule,
     MatTooltipModule,
     CdkTableModule
-  ]
+  ],
+  declarations: [ModalDialogComponent]
 })
 export class MaterialModule {}

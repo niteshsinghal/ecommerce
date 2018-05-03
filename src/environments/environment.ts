@@ -17,6 +17,8 @@ export const environment = {
     posts: "posts", // Get All Posts
     post: "posts", // Get Single Post
     users: "users", // Get All Users
-    user: "users" // Get Single User
+    user: "users", // Get Single User
+    albums: "albums",
+    photos: "photos"
   }
 };
