@@ -20,5 +20,9 @@ export const environment = {
     user: "users", // Get Single User
     albums: "albums",
     photos: "photos"
+  },
+  API: {
+    Base: "http://localhost/EcommerceApi/",
+    Token: "token"
   }
 };

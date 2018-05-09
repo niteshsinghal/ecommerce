@@ -18,23 +18,18 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loginForm = this.fb.group({
-      email: ["", [Validators.required, Validators.email]],
-      password: ["", [Validators.required]]
-    });
+    // this.loginForm = this.fb.group({
+    //   email: ["", [Validators.required, Validators.email]],
+    //   password: ["", [Validators.required]]
+    // });
   }
-  loginUser() {
-    if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value).subscribe(response => {
-        let token: IToken = {
-          email: this.loginForm.value.email,
-          token: response["token"]
-        };
-        localStorage.setItem("LOGIN_USER", JSON.stringify(token));
-        this.router.navigate(["/home"]);
-      });
-    } else {
-      console.log("Invalid Form");
-    }
-  }
+  // loginUser() {
+  //   if (this.loginForm.valid) {
+  //     this.authService.login(this.loginForm.value).subscribe(response => {
+  //       this.router.navigate(["/home"]);
+  //     });
+  //   } else {
+  //     console.log("Invalid Form");
+  //   }
+  // }
 }

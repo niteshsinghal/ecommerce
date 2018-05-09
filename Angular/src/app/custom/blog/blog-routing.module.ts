@@ -18,22 +18,6 @@ const routes: Routes = [
       {
         path: "posts",
         component: PostsComponent
-      },
-      {
-        path: "ecommerce",
-        loadChildren: "./ecommerce/ecommerce.module#EcommerceModule"
-      },
-      {
-        path: "crm-dashboard",
-        loadChildren: "./crm-dashboard/crm-dashboard.module#CrmDashboardModule"
-      },
-      {
-        path: "analytics",
-        loadChildren: "./analytics/analytics.module#AnalyticsModule"
-      },
-      {
-        path: "project",
-        loadChildren: "./project/project.module#ProjectModule"
       }
     ]
   }

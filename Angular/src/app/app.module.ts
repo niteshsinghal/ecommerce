@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SharedModule } from "./shared/shared.module";
 import { MenuItems } from "./shared/menu-items/menu-items";
 import { BreadcrumbsComponent } from "./layout/admin/breadcrumbs/breadcrumbs.component";
+import { AuthGuard } from "./custom/_guard/auth-guard.guard";
+import { AuthenticationService } from "./custom/_services/authentication.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { BreadcrumbsComponent } from "./layout/admin/breadcrumbs/breadcrumbs.com
     AppRoutingModule,
     SharedModule
   ],
-  providers: [MenuItems],
+  providers: [MenuItems, AuthGuard, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

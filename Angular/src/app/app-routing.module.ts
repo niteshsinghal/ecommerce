@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { AdminComponent } from "./layout/admin/admin.component";
 import { AuthComponent } from "./layout/auth/auth.component";
+import { AuthGuard } from "./custom/_guard/auth-guard.guard";
 
 const routes: Routes = [
   // {
@@ -23,6 +24,7 @@ const routes: Routes = [
   {
     path: "",
     component: AdminComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: "",
