@@ -9,7 +9,7 @@ namespace NorthwindApi.Responses
         {
             var status = default(HttpStatusCode);
 
-            if (composedModelResponse.DidError)
+            if (composedModelResponse.Error)
             {
                 status = HttpStatusCode.InternalServerError;
             }
@@ -25,7 +25,7 @@ namespace NorthwindApi.Responses
         {
             var status = default(HttpStatusCode);
 
-            if (singleModelResponse.DidError)
+            if (singleModelResponse.Error)
             {
                 status = HttpStatusCode.InternalServerError;
             }

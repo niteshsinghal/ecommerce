@@ -10,8 +10,7 @@ namespace Northwind.Core.DataLayer.Repositories
 {
     public class ProductRepository : Repository<Product>, IProductRepository
     {
-        public ProductRepository(DbContext dbContext)
-            : base(dbContext)
+        public ProductRepository(DbContext dbContext) : base(dbContext)
         {
         }
 
@@ -48,7 +47,7 @@ namespace Northwind.Core.DataLayer.Repositories
             {
                 query = query.Where(item => item.ProductName.Contains(productName));
             }
-
+            query = query.Where(item => item.Discontinued == false);
             return query;
         }
 

@@ -10,13 +10,13 @@ namespace NorthwindApi.Responses
 
         }
 
-        [DataMember(Name = "message")]
+        [DataMember(Name = "Message")]
         public String Message { get; set; }
 
-        [DataMember(Name = "didError")]
-        public Boolean DidError { get; set; }
+        [DataMember(Name = "Error")]
+        public Boolean Error { get; set; }
 
-        [DataMember(Name = "errorMessage")]
+        [DataMember(Name = "ErrorMessage")]
         public String ErrorMessage { get; set; }
 
         [DataMember(Name = "model")]

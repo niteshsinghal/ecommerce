@@ -5,22 +5,6 @@ import { AuthComponent } from "./layout/auth/auth.component";
 import { AuthGuard } from "./custom/_guard/auth-guard.guard";
 
 const routes: Routes = [
-  // {
-  //   path: "blog",
-  //   //component: Blog,
-  //   loadChildren: "./custom/blog/blog.module#BlogModule"
-  //   // children: [
-  //   //   {
-  //   //     path: "auth",
-  //   //     loadChildren: "./theme/auth/auth.module#AuthModule"
-  //   //   },
-  //   //   {
-  //   //     path: "maintenance/offline-ui",
-  //   //     loadChildren:
-  //   //       "./theme/maintenance/offline-ui/offline-ui.module#OfflineUiModule"
-  //   //   }
-  //   // ]
-  // },
   {
     path: "",
     component: AdminComponent,
@@ -38,6 +22,10 @@ const routes: Routes = [
       {
         path: "blog",
         loadChildren: "./custom/blog/blog.module#BlogModule"
+      },
+      {
+        path: "product",
+        loadChildren: "./custom/product/product.module#ProductModule"
       },
       {
         path: "navigation",

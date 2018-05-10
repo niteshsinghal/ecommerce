@@ -23,16 +23,16 @@ const routes: Routes = [
   }
 ];
 
-const routes2: Routes = [
-  { path: "posts", component: PostsComponent },
-  { path: "posts/:id", component: PostsComponent },
-  { path: "post/:id", component: PostDetailComponent },
-  { path: "users", component: UsersComponent },
-  { path: "user/:id", component: UserComponent },
-  { path: "albums", component: AlbumsComponent },
-  { path: "photos", component: PhotosComponent },
-  { path: "photos/:albumId", component: PhotosComponent }
-];
+// const routes2: Routes = [
+//   { path: "posts", component: PostsComponent },
+//   { path: "posts/:id", component: PostsComponent },
+//   { path: "post/:id", component: PostDetailComponent },
+//   { path: "users", component: UsersComponent },
+//   { path: "user/:id", component: UserComponent },
+//   { path: "albums", component: AlbumsComponent },
+//   { path: "photos", component: PhotosComponent },
+//   { path: "photos/:albumId", component: PhotosComponent }
+// ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

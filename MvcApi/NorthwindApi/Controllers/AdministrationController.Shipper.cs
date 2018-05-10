@@ -25,7 +25,7 @@ namespace NorthwindApi.Controllers
                 ExceptionHelper.Publish(ex);
 
                 response.ErrorMessage = ex.Message;
-                response.DidError = true;
+                response.Error = true;
             }
 
             return response.ToHttpResponse(Request);
@@ -44,7 +44,7 @@ namespace NorthwindApi.Controllers
             {
                 ExceptionHelper.Publish(ex);
 
-                response.DidError = true;
+                response.Error = true;
                 response.ErrorMessage = ex.Message;
             }
 
@@ -66,7 +66,7 @@ namespace NorthwindApi.Controllers
             {
                 ExceptionHelper.Publish(ex);
 
-                response.DidError = true;
+                response.Error = true;
                 response.ErrorMessage = ex.Message;
             }
 
@@ -86,7 +86,7 @@ namespace NorthwindApi.Controllers
             {
                 ExceptionHelper.Publish(ex);
 
-                response.DidError = true;
+                response.Error = true;
                 response.ErrorMessage = ex.Message;
             }
 
@@ -107,7 +107,7 @@ namespace NorthwindApi.Controllers
             {
                 ExceptionHelper.Publish(ex);
 
-                response.DidError = true;
+                response.Error = true;
                 response.ErrorMessage = ex.Message;
             }
 

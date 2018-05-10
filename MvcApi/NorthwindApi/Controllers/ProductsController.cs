@@ -3,15 +3,53 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Northwind.Core.BusinessLayer.Contracts;
 using Northwind.Core.EntityLayer;
 using NorthwindApi.Helpers;
 using NorthwindApi.Responses;
+using NorthwindApi.Services;
 using NorthwindApi.ViewModels;
 
 namespace NorthwindApi.Controllers
 {
-    public partial class AdministrationController : ApiController
+    public class ProductsController : ApiController
     {
+        protected ISalesBusinessObject BusinessObject;
+        readonly DapperHelper _dapper = new DapperHelper();
+
+        public ProductsController(IBusinessObjectService service)
+        {
+            BusinessObject = service.GetSalesBusinessObject();
+        }
+
+        //// GET: api/Product
+        //[HttpGet]
+        //[Route("Products")]
+        //public async Task<HttpResponseMessage> GetProducts()
+        //{
+
+        //    var response = new ComposedModelResponse<ProductListViewModel>() as IComposedModelResponse<ProductListViewModel>;
+
+        //    try
+        //    {
+        //        response.Model = await Task.Run(() =>
+        //        {
+        //            return _dapper.Query<ProductListViewModel>("ProductsList").ToList();
+        //        });
+        //        response.Message = String.Format("Total of records: {0}.", response.Model.Count());
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ExceptionHelper.Publish(ex);
+
+        //        response.Error = true;
+        //        response.ErrorMessage = ex.Message;
+        //    }
+
+        //    return response.ToHttpResponse(Request);
+        //}
+
+
         // GET: api/Product
         [HttpGet]
         [Route("Product")]
@@ -25,12 +63,13 @@ namespace NorthwindApi.Controllers
                 {
                     return BusinessObject.GetProductsDetails(supplierID, categoryID, productName).Select(item => new ProductDetailViewModel(item)).ToList();
                 });
+                response.Message = String.Format("Total of records: {0}.", response.Model.Count());
             }
             catch (Exception ex)
             {
                 ExceptionHelper.Publish(ex);
 
-                response.DidError = true;
+                response.Error = true;
                 response.ErrorMessage = ex.Message;
             }
 
@@ -55,7 +94,7 @@ namespace NorthwindApi.Controllers
             {
                 ExceptionHelper.Publish(ex);
 
-                response.DidError = true;
+                response.Error = true;
                 response.ErrorMessage = ex.Message;
             }
 
@@ -80,7 +119,7 @@ namespace NorthwindApi.Controllers
             {
                 ExceptionHelper.Publish(ex);
 
-                response.DidError = true;
+                response.Error = true;
                 response.ErrorMessage = ex.Message;
             }
 
@@ -107,7 +146,7 @@ namespace NorthwindApi.Controllers
             {
                 ExceptionHelper.Publish(ex);
 
-                response.DidError = true;
+                response.Error = true;
                 response.ErrorMessage = ex.Message;
             }
 
@@ -134,7 +173,7 @@ namespace NorthwindApi.Controllers
             {
                 ExceptionHelper.Publish(ex);
 
-                response.DidError = true;
+                response.Error = true;
                 response.ErrorMessage = ex.Message;
             }
 

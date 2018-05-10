@@ -6,7 +6,7 @@ namespace NorthwindApi.Responses
     {
         String Message { get; set; }
 
-        Boolean DidError { get; set; }
+        Boolean Error { get; set; }
 
         String ErrorMessage { get; set; }
     }
