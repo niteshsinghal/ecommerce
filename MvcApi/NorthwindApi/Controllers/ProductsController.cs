@@ -53,7 +53,7 @@ namespace NorthwindApi.Controllers
         // GET: api/Product
         [HttpGet]
         [Route("Product")]
-        public async Task<HttpResponseMessage> GetProducts(String productName, Int32? supplierID, Int32? categoryID)
+        public async Task<HttpResponseMessage> GetProducts(String productName = "", Int32? supplierID = null, Int32? categoryID = null)
         {
             var response = new ComposedModelResponse<ProductDetailViewModel>() as IComposedModelResponse<ProductDetailViewModel>;
 
