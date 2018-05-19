@@ -35,7 +35,7 @@ import {
   MatStepperModule
 } from "@angular/material";
 import { CdkTableModule } from "@angular/cdk/table";
-import { ModalDialogComponent } from "./modal-dialog/modal-dialog.component";
+import { ModalDialogComponent } from "./../modal-dialog/modal-dialog.component";
 
 @NgModule({
   imports: [
@@ -86,6 +86,7 @@ import { ModalDialogComponent } from "./modal-dialog/modal-dialog.component";
     MatDatepickerModule,
     MatDialogModule,
     MatExpansionModule,
+    MatFormFieldModule,
     MatGridListModule,
     MatIconModule,
     MatInputModule,

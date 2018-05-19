@@ -20,6 +20,7 @@ import { SpinnerComponent } from "./spinner/spinner.component";
 import { ClickOutsideModule } from "ng-click-outside";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { HttpModule } from "@angular/http";
+import { MaterialModule } from "./material/material.module";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -27,6 +28,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 @NgModule({
   imports: [
+    MaterialModule,
     CommonModule,
     NgbModule.forRoot(),
     HttpModule,
@@ -37,6 +39,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ],
   exports: [
     NgbModule,
+    MaterialModule,
     ToggleFullScreenDirective,
     AccordionAnchorDirective,
     AccordionLinkDirective,

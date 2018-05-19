@@ -13,7 +13,7 @@ export class ProductService {
   constructor(public http: HttpClient) {}
 
   public getProductsList() {
-    let url: string = env.API.Base + env.API.Products;
+    let url: string = env.API.Base + env.API.ProductsList;
     return this.http.get(url, { headers: this.postHeaders });
   }
 }

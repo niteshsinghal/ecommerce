@@ -24,6 +24,6 @@ export const environment = {
   API: {
     Base: "http://localhost/EcommerceApi/",
     Token: "token",
-    Products: "Products"
+    ProductsList: "Product"
   }
 };

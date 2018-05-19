@@ -1,3 +1,40 @@
-<p>
-  product-list works!
-</p>
+<div class="page-body navbar-page">
+  <div class="row">
+    <div class="col-sm-12">
+      <app-card [title]="'Products'" [headerContent]="''" [cardOptionBlock]="true">
+
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+        <div class="example-container mat-elevation-z8">
+
+          <mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="productName">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Product Name </mat-header-cell>
+              <mat-cell *matCellDef="let row" class="cursor-anchor" [routerLink]="['/product/detail',row?.productID]"> {{row.productName}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="unitPrice">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.unitPrice}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="quantityPerUnit">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Quantity Per Unit </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.quantityPerUnit}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="categoryName">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.categoryName}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+          </mat-table>
+
+          <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+        </div>
+
+
+      </app-card>
+    </div>
+  </div>
+</div>
