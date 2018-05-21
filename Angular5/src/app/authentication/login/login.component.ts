@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
           token: response["token"]
         };
         localStorage.setItem("LOGIN_USER", JSON.stringify(token));
-        this.router.navigate(["/dashboard/dashboard1"]);
+        this.router.navigate(["/dashboard/modern"]);
       });
     } else {
       console.log("Invalid Form");

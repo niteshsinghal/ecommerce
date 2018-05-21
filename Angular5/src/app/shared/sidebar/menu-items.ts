@@ -4,9 +4,9 @@ export const ROUTES: RouteInfo[] = [
     {
         path: '', title: 'Dashboards', icon: 'mdi mdi-gauge', class: 'has-arrow', label: '', labelClass: '', extralink: false,
         submenu: [
-            { path: '/dashboard/dashboard1', title: 'Modern', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
-            { path: '/dashboard/dashboard2', title: 'Classic', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
-            { path: '/dashboard/dashboard3', title: 'Analytical', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '/dashboard/modern', title: 'Modern', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '/dashboard/classic', title: 'Classic', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '/dashboard/analytical', title: 'Analytical', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
         ]
     },
     {

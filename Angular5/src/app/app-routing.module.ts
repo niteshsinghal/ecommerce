@@ -12,7 +12,7 @@ export const routes: Routes = [
     component: FullComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: "", redirectTo: "/dashboard/dashboard1", pathMatch: "full" },
+      { path: "", redirectTo: "/dashboard/modern", pathMatch: "full" },
       { path: "dashboard", loadChildren: "./dashboards/dashboard.module#DashboardModule" },
       { path: "starter", loadChildren: "./starter/starter.module#StarterModule" },
       { path: "component", loadChildren: "./component/component.module#ComponentsModule" },
