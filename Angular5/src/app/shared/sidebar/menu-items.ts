@@ -100,19 +100,6 @@ export const ROUTES: RouteInfo[] = [
             { path: '/sample-pages/helperclasses', title: 'Helper Classes', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
             { path: '/starter', title: 'Starter Page', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
         ]
-    },
-    {
-        path: '', title: 'Menu Levels', icon: 'mdi mdi-arrange-send-backward', class: '', label: '', labelClass: '', extralink: false,
-        submenu: [
-            { path: 'javascript:void(0);', title: 'Second Level', icon: '', class: '', label: '', labelClass: '', extralink: true, submenu: [] },
-            {
-                path: '', title: 'Second Child', icon: '', class: 'has-arrow', label: '', labelClass: '', extralink: false,
-                submenu: [
-                    { path: 'javascript:void(0);', title: 'Third 1.1', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
-                    { path: 'javascript:void(0);', title: 'Third 1.2', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
-                ]
-            },
-        ]
     }
      
 ];

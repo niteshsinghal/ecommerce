@@ -10,12 +10,6 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 })
 export class FullComponent implements OnInit {
 
-    color = 'blue';
-    showSettings = false;
-    showMinisidebar = false; 
-    showDarktheme = false;
-    showHorizontalNav = true;
-    showBoxedtheme = true;
 	public config: PerfectScrollbarConfigInterface = {};
 
     constructor(public router: Router) { }
