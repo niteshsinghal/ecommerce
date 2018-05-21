@@ -7,15 +7,23 @@ using Northwind.Core.EntityLayer;
 using NorthwindApi.Helpers;
 using NorthwindApi.Responses;
 using NorthwindApi.ViewModels;
+using Northwind.Core.BusinessLayer.Contracts;
+using NorthwindApi.Services;
 
 namespace NorthwindApi.Controllers
 {
-    public partial class AdministrationController : ApiController
+    public class CategoryController : ApiController
     {
+        protected ISalesBusinessObject BusinessObject;
+        readonly DapperHelper _dapper = new DapperHelper();
+        public CategoryController(IBusinessObjectService service)
+        {
+            BusinessObject = service.GetSalesBusinessObject();
+        }
         // GET: api/Category
         [HttpGet]
         [Route("Category")]
-       // [Authorize(Roles ="Admin")]
+        // [Authorize(Roles ="Admin")]
         public async Task<HttpResponseMessage> GetCategories()
         {
             var response = new ComposedModelResponse<CategoryViewModel>() as IComposedModelResponse<CategoryViewModel>;

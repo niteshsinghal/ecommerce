@@ -8,11 +8,20 @@ using Northwind.Core.EntityLayer;
 using NorthwindApi.Helpers;
 using NorthwindApi.Responses;
 using NorthwindApi.ViewModels;
+using Northwind.Core.BusinessLayer.Contracts;
+using NorthwindApi.Services;
 
 namespace NorthwindApi.Controllers
 {
-    public partial class AdministrationController : ApiController
+    public class SupplierController : ApiController
     {
+        protected ISalesBusinessObject BusinessObject;
+        readonly DapperHelper _dapper = new DapperHelper();
+
+        public SupplierController(IBusinessObjectService service)
+        {
+            BusinessObject = service.GetSalesBusinessObject();
+        }
         // GET: api/Supplier
         [HttpGet]
         [Route("Supplier")]
