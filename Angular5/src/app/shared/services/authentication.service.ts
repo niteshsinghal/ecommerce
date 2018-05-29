@@ -2,8 +2,8 @@ import { environment as env } from "./../../../environments/environment";
 import { IAuth, IToken } from "../entity/IAuth";
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
-
+import { Observable } from "rxjs";
+import { map, filter, switchMap, catchError } from "rxjs/operators";
 @Injectable()
 export class AuthenticationService {
   postHeaders = new HttpHeaders().set("Content-Type", "application/x-www-form-urlencoded");

@@ -1,15 +1,11 @@
-import { Component } from '@angular/core';
-import * as tableData from './smart-data-table';
-import { LocalDataSource } from 'ng2-smart-table';
+import { Component } from "@angular/core";
+import * as tableData from "./smart-data-table";
 @Component({
-  templateUrl: './smart-table.component.html'  
+  templateUrl: "./smart-table.component.html"
 })
-export class SmarttableComponent { 
-    source: LocalDataSource;
-    constructor() {
-        this.source = new LocalDataSource(tableData.data); // create the source                                       
-        
-    };
-   settings = tableData.settings;
-   settings2 = tableData.settings2 
+export class SmarttableComponent {
+  source: any;
+  constructor() {}
+  settings = tableData.settings;
+  settings2 = tableData.settings2;
 }

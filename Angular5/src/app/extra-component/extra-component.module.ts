@@ -1,19 +1,18 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { Routes, RouterModule } from "@angular/router";
+import { ToastrModule } from "ngx-toastr";
+import { DragulaModule } from "ng2-dragula";
+import { QuillModule } from "ngx-quill";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { FileUploadModule } from "ng2-file-upload/ng2-file-upload";
 
-import { DragulaModule } from 'ng2-dragula';
-import { QuillModule } from 'ngx-quill';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FileUploadModule } from 'ng2-file-upload/ng2-file-upload';
-import { ToastModule } from 'ng2-toastr/ng2-toastr'; 
-
-import { ExtraComponentsRoutes } from './extra-component.routing';
-import { ToastrComponent } from './toastr/toastr.component';
-import { UploadComponent } from './file-upload/upload.component';
-import { EditorComponent } from './editor/editor.component';
-import { DragComponent } from './drag-n-drop/drag.component';
+import { ExtraComponentsRoutes } from "./extra-component.routing";
+import { ToastrComponent } from "./toastr/toastr.component";
+import { UploadComponent } from "./file-upload/upload.component";
+import { EditorComponent } from "./editor/editor.component";
+import { DragComponent } from "./drag-n-drop/drag.component";
 
 @NgModule({
   imports: [
@@ -21,18 +20,12 @@ import { DragComponent } from './drag-n-drop/drag.component';
     RouterModule.forChild(ExtraComponentsRoutes),
     FormsModule,
     ReactiveFormsModule,
-    ToastModule.forRoot(),
+    ToastrModule.forRoot(),
     DragulaModule,
     QuillModule,
     NgbModule,
-    FileUploadModule,
+    FileUploadModule
   ],
-  declarations: [
-    ToastrComponent,
-    UploadComponent,
-    EditorComponent,
-    DragComponent
-  ]
+  declarations: [ToastrComponent, UploadComponent, EditorComponent, DragComponent]
 })
-
 export class ExtraComponentsModule {}

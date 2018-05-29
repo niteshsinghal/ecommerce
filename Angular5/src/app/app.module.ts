@@ -4,9 +4,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CommonModule, LocationStrategy, HashLocationStrategy } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpModule } from "@angular/http";
 import { HttpClientModule } from "@angular/common/http";
 import { Routes, RouterModule } from "@angular/router";
+import { ToastrModule } from "ngx-toastr";
 
 import { FullComponent } from "./layouts/full/full.component";
 import { BlankComponent } from "./layouts/blank/blank.component";
@@ -49,12 +49,12 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
     HttpClientModule,
     NgbModule.forRoot(),
     PerfectScrollbarModule,
     AppRoutingModule,
-    TableModule
+    TableModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     AuthGuard,

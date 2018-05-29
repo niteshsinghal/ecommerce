@@ -1,8 +1,9 @@
+import { throwError as observableThrowError, Observable } from "rxjs";
 import { environment as env } from "./../../../environments/environment";
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
-import "rxjs/add/operator/map";
+import { map, filter, switchMap, catchError } from "rxjs/operators";
+//import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 import { AuthenticationService } from "./authentication.service";
 import { Category } from "../entity/ecommerce";
@@ -23,8 +24,8 @@ export class CategoryService {
       .map((res: Response) => {
         let _response = res as any;
         if (!_response.error) return _response.model;
-        else return Observable.throw("Server error" + _response.errorMessage);
+        else return observableThrowError("Server error" + _response.errorMessage);
       })
-      .catch((error: any) => Observable.throw("Server error" + error));
+      .catch((error: any) => observableThrowError("Server error" + error));
   }
 }

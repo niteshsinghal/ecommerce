@@ -4,9 +4,6 @@ import { FormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
 import { TableModule } from "ngx-easy-table";
 import { CategoryComponent } from "./category/category.component";
-import { Ng2SmartTableModule } from "ng2-smart-table";
-import { NgxDatatableModule } from "@swimlane/ngx-datatable";
-import { AgGridModule } from "ag-grid-angular";
 const routes: Routes = [
   {
     path: "",
@@ -27,15 +24,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    FormsModule,
-    CommonModule,
-    RouterModule.forChild(routes),
-    NgxDatatableModule,
-    Ng2SmartTableModule,
-    TableModule,
-    AgGridModule.withComponents([])
-  ],
+  imports: [FormsModule, CommonModule, RouterModule.forChild(routes), TableModule],
   declarations: [CategoryComponent]
 })
 export class ApplicationModule {}

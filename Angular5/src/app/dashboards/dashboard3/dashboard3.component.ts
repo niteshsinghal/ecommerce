@@ -3,7 +3,6 @@ import {NgbProgressbarConfig} from '@ng-bootstrap/ng-bootstrap';
 import * as Chartist from 'chartist';
 import { ChartType, ChartEvent } from "ng-chartist/dist/chartist.component";
 import * as tableData from './smart-data-table';
-import { LocalDataSource } from 'ng2-smart-table';
 declare var require: any;
 
 const data: any = require('./data.json');
@@ -22,10 +21,10 @@ export interface Chart {
 })
 export class Dashboard3Component implements AfterViewInit {
 	subtitle:string;
-    source: LocalDataSource;	
+    source: any;	
 	constructor() {
 		this.subtitle = "This is some text within a card block.";
-        this.source = new LocalDataSource(tableData.data);
+       
 	}
     settings2 = tableData.settings;
     // This is for the dashboar line chart

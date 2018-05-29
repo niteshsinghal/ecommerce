@@ -2,6 +2,7 @@
 
 @import "~perfect-scrollbar/css/perfect-scrollbar.css";
 @import "~ngx-easy-table/spectre.css";
+@import "~ngx-toastr/toastr.css";
 .ps .ps__scrollbar-y-rail {
   left: 3px;
   right: auto;

@@ -1423,15 +1423,6 @@ Smart table
     line-height: 1rem;
 } 
 
-/*******************
-NGX Data table
-******************/
-@import '~@swimlane/ngx-datatable/release/themes/material.css';
-@import '~@swimlane/ngx-datatable/release/assets/icons.css';
-.ngx-datatable.material {
- box-shadow:none!important;
-    border:1px solid $border;
-}
 
 /*******************
 Chartistt chart css

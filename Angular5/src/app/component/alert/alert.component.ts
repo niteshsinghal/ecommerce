@@ -1,7 +1,7 @@
 import { Input, Component, OnInit } from '@angular/core';
-import {Subject} from 'rxjs/Subject';
-import 'rxjs/add/operator/debounceTime';
-
+import {Subject} from 'rxjs';
+//import { debounceTime, map } from 'rxjs/operators;
+import "rxjs/Rx";
 @Component({
 	selector: '',
 	templateUrl: 'alert.component.html'
