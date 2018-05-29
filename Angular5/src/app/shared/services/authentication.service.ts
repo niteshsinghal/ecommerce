@@ -27,4 +27,7 @@ export class AuthenticationService {
   get User(): string {
     return (JSON.parse(localStorage.getItem("LOGIN_USER")) as IToken).username;
   }
+  get Token(): string {
+    return (JSON.parse(localStorage.getItem("LOGIN_USER")) as IToken).username;
+  }
 }

@@ -23,7 +23,8 @@ export const routes: Routes = [
       { path: "widgets", loadChildren: "./widgets/widgets.module#WidgetsModule" },
       { path: "extra-component", loadChildren: "./extra-component/extra-component.module#ExtraComponentsModule" },
       { path: "apps", loadChildren: "./apps/apps.module#AppsModule" },
-      { path: "sample-pages", loadChildren: "./sample-pages/sample-pages.module#SamplePagesModule" }
+      { path: "sample-pages", loadChildren: "./sample-pages/sample-pages.module#SamplePagesModule" },
+      { path: "application", loadChildren: "./application/application.module#ApplicationModule" }
     ]
   },
   {
