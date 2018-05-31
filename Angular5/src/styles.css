@@ -3,7 +3,18 @@
 @import "~perfect-scrollbar/css/perfect-scrollbar.css";
 @import "~ngx-easy-table/spectre.css";
 @import "~ngx-toastr/toastr.css";
+body {
+  font-size: 0.8rem !important;
+}
 .ps .ps__scrollbar-y-rail {
   left: 3px;
   right: auto;
+}
+.ngx-input-sm,
+.ngx-input-sm:focus {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  box-shadow: 0 0 0 0.2rem #fff;
 }
