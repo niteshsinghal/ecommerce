@@ -6,9 +6,10 @@
 export const environment = {
   production: false,
   API: {
-    Base: "http://localhost/EcommerceApi/",
+    Base: "https://historyviewerapi.azurewebsites.net/",
     Token: "token",
-    ProductsList: "Product",
-    Category: "category"
+    Employees: "employees",
+    EmployeeCard: "employeecard",
+    PositionCard: "positioncard"
   }
 };

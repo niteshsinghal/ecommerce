@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthenticationService } from "../../shared/services/authentication.service";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { IToken } from "../../shared/entity/IAuth";
+import { authUser } from "../../shared/entity/IAuth";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -11,12 +11,16 @@ import { IToken } from "../../shared/entity/IAuth";
 export class LoginComponent implements OnInit, AfterViewInit {
   loginForm: FormGroup;
 
-  constructor(public router: Router, private authService: AuthenticationService, private fb: FormBuilder) {}
+  constructor(
+    public router: Router,
+    private authService: AuthenticationService,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      username: ["test", [Validators.required]], //, Validators.email]],
-      password: ["test", [Validators.required]]
+      username: ["hradmin@hv6.com", [Validators.required]], //, Validators.email]],
+      password: ["111", [Validators.required]]
     });
   }
 
@@ -34,11 +38,17 @@ export class LoginComponent implements OnInit, AfterViewInit {
   loginUser() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(response => {
-        let token: IToken = {
-          username: this.loginForm.value.username,
-          token: response["token"]
-        };
-        localStorage.setItem("LOGIN_USER", JSON.stringify(token));
+        debugger;
+        let _authUser = new authUser();
+        _authUser.userName = this.loginForm.value.username;
+        _authUser.token = response["token"];
+        _authUser.personID = response["personID"];
+        _authUser.firstName = response["firstName"];
+        _authUser.lastName = response["lastName"];
+        _authUser.roleCode = response["roleCode"];
+        _authUser.roleDescription = response["roleDescription"];
+
+        localStorage.setItem("LOGIN_USER", JSON.stringify(_authUser));
         this.router.navigate(["/dashboard/modern"]);
       });
     } else {

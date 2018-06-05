@@ -14,7 +14,7 @@ export class CategoryComponent implements AfterViewInit, OnInit {
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit() {
-    this.loadCategories();
+    //this.loadCategories();
   }
 
   ngAfterViewInit() {}

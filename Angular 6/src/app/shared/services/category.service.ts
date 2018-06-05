@@ -18,7 +18,7 @@ export class CategoryService {
   constructor(public http: HttpClient, private authService: AuthenticationService) {}
 
   getCategories(): Observable<Category[]> {
-    let url: string = env.API.Base + env.API.Category;
+    let url: string = env.API.Base + env.API.Employees;
     return this.http
       .get(url)
       .map((res: Response) => {
