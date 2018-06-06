@@ -15,9 +15,11 @@ import { NavigationComponent } from "./shared/header-navigation/navigation.compo
 import { SidebarComponent } from "./shared/sidebar/sidebar.component";
 import { BreadcrumbComponent } from "./shared/breadcrumb/breadcrumb.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
-import { PERFECT_SCROLLBAR_CONFIG } from "ngx-perfect-scrollbar";
-import { PerfectScrollbarConfigInterface } from "ngx-perfect-scrollbar";
+import {
+  PerfectScrollbarModule,
+  PERFECT_SCROLLBAR_CONFIG,
+  PerfectScrollbarConfigInterface
+} from "ngx-perfect-scrollbar";
 import { TableModule } from "ngx-easy-table";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -25,7 +27,7 @@ import { AppComponent } from "./app.component";
 import { SpinnerComponent } from "./shared/spinner.component";
 import { AuthGuard } from "./shared/guard/auth-guard.guard";
 import { AuthenticationService } from "./shared/services/authentication.service";
-import { CategoryService } from "./shared/services/category.service";
+import { DataService } from "./shared/services/data.service";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -59,7 +61,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   providers: [
     AuthGuard,
     AuthenticationService,
-    CategoryService,
+    DataService,
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG

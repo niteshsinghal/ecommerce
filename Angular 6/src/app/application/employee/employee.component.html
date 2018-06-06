@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-outline-info">
+      <div class="card-header">
+        <h4 class="m-b-0 text-white">Employment Profile</h4>
+      </div>
+      <div class="card-body" *ngIf="employeeCard">
+        <h3 class="card-title">{{employeeCard.employeeName}}</h3>
+
+        <div class="row">
+          <div class="col b-r">
+            <span class="text-muted">Home Department</span>
+            <h6>{{employeeCard.department}}</h6>
+          </div>
+          <div class="col b-r">
+            <span class="text-muted">Tax ID (SSN)</span>
+            <h6>{{employeeCard.ssn}}</h6>
+          </div>
+          <div class="col b-r">
+            <span class="text-muted">Position ID</span>
+            <h6>{{employeeCard.positionID}}</h6>
+          </div>
+          <div class="col b-r">
+            <span class="text-muted">Hire Date</span>
+            <h6>{{employeeCard.hireDate}}</h6>
+          </div>
+          <div class="col">
+            <span class="text-muted">Status</span>
+            <h6>{{employeeCard.employeeStatus}}</h6>
+          </div>
+          <div class="col">
+            <span class="text-muted">Employee</span>
+            <h6>
+              <select [(ngModel)]="selectedEmployee.personID" (change)="onChange()" id="ddlEmployees" class="form-control input-sm f-12 v-bottom">
+                <option *ngFor="let emp of employees" value={{emp.personID}}>
+                  {{emp.employeeName}}
+                </option>
+              </select>
+            </h6>
+          </div>
+          <div class="col">
+            <span class="text-muted"></span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+
+      <div class="card-body">
+        Body
+        <div class="form-group p-t-35 v-top pull-right rolodex">
+          <span class="block">
+
+            <a id="btnPrevious" title="Previous" class="aspNetDisabled">
+              <i class="fa fa-chevron-left f-22 p-r-5"></i>
+            </a>
+
+
+            <span id="lblCurrentRow" class="f-16 f-w-600 m-0 v-top text-tranform-lower" for="label">1</span>
+            <label class="f-16 f-w-600 m-0 v-top text-tranform-lower">of</label>
+            <span id="lblTotalCount" class="f-16 f-w-600 m-0 v-top text-tranform-lower" for="label">28</span>
+            <a id="btnNext" title="Next" href="javascript:__doPostBack('ctl00$MainContent$btnNext','')">
+              <i class="fa fa-chevron-right f-22 p-l-5"></i>
+            </a>
+
+          </span>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

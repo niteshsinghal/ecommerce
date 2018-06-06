@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, OnInit, ViewChild } from "@angular/core";
-import { CategoryService } from "../../shared/services/category.service";
-import { Category } from "../../shared/entity/ecommerce";
+import { DataService } from "../../shared/services/data.service";
+// import { Category } from "../../shared/entity/ecommerce";
 import { ConfigService } from "../../shared/services/config.service";
 
 @Component({
@@ -11,7 +11,7 @@ export class CategoryComponent implements AfterViewInit, OnInit {
   categories: any;
   data = [];
   configuration;
-  constructor(private categoryService: CategoryService) {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
     //this.loadCategories();
@@ -21,10 +21,10 @@ export class CategoryComponent implements AfterViewInit, OnInit {
 
   loadCategories() {
     this.configuration = ConfigService.config;
-    this.categoryService.getCategories().subscribe(res => {
-      this.categories = res;
-      this.configuration.isLoading = false;
-    });
+    // this.dataService.getCategories().subscribe(res => {
+    //   this.categories = res;
+    //   this.configuration.isLoading = false;
+    // });
   }
 
   deleteCategory(row) {

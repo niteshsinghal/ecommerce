@@ -25,6 +25,9 @@ export class AuthenticationService {
     return (JSON.parse(localStorage.getItem("LOGIN_USER")) as authUser).userName;
   }
   get Token(): string {
-    return (JSON.parse(localStorage.getItem("LOGIN_USER")) as authUser).userName;
+    return (JSON.parse(localStorage.getItem("LOGIN_USER")) as authUser).token;
+  }
+  get PersonId(): number {
+    return (JSON.parse(localStorage.getItem("LOGIN_USER")) as authUser).personID;
   }
 }

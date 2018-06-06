@@ -579,6 +579,16 @@ export const ROUTES: RouteInfo[] = [
         labelClass: "",
         extralink: false,
         submenu: []
+      },
+      {
+        path: "/application/employee",
+        title: "Employees",
+        icon: "",
+        class: "",
+        label: "",
+        labelClass: "",
+        extralink: false,
+        submenu: []
       }
       //   { path: "/apps/fullcalendar", title: "Calendar", icon: "", class: "", label: "", labelClass: "", extralink: false, submenu: [] },
       //   { path: "/apps/taskboard", title: "Taskboard", icon: "", class: "", label: "", labelClass: "", extralink: false, submenu: [] }

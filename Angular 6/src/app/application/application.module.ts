@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
 import { TableModule } from "ngx-easy-table";
 import { CategoryComponent } from "./category/category.component";
+import { EmployeeComponent } from "./employee/employee.component";
 const routes: Routes = [
   {
     path: "",
@@ -11,11 +12,11 @@ const routes: Routes = [
       {
         path: "category",
         component: CategoryComponent
-      }
-      // 	, {
-      //   path: 'login',
-      //   component: LoginComponent
-      // }, {
+      },
+      {
+        path: "employee",
+        component: EmployeeComponent
+      } //, {
       //   path: 'signup',
       //   component: SignupComponent
       // 	}
@@ -25,6 +26,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [FormsModule, CommonModule, RouterModule.forChild(routes), TableModule],
-  declarations: [CategoryComponent]
+  declarations: [CategoryComponent, EmployeeComponent]
 })
 export class ApplicationModule {}
