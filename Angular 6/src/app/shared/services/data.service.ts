@@ -19,8 +19,7 @@ export class DataService {
   constructor(public http: HttpClient, private authService: AuthenticationService) {}
 
   getEmployees(): Observable<employee[]> {
-    let url: string =
-      env.API.Base + env.API.Employees + "?loggedInPersonId=" + this.authService.PersonId + "";
+    let url: string = env.API.Base + env.API.Employees + "?loggedInPersonId=" + this.authService.PersonId + "";
     return this.http
       .get<employee[]>(url, { headers: this.postHeaders })
       .catch((error: any) => observableThrowError("Server error" + error));

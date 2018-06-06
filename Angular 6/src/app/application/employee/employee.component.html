@@ -31,16 +31,22 @@
           <div class="col">
             <span class="text-muted">Employee</span>
             <h6>
-              <select [(ngModel)]="selectedEmployee.personID" (change)="onChange()" id="ddlEmployees" class="form-control input-sm f-12 v-bottom">
+              <select [(ngModel)]="selectedEmployee" (change)="onChange($event.target.value)" id="ddlEmployees" class="form-control input-sm f-12 v-bottom">
                 <option *ngFor="let emp of employees" value={{emp.personID}}>
                   {{emp.employeeName}}
                 </option>
               </select>
             </h6>
           </div>
-          <div class="col">
-            <span class="text-muted"></span>
-
+          <div class="col p-t-20 text-right">
+            <span class="text-muted" style="width: 100px">&nbsp;</span>
+            <a (click)="onChange(previousIndex)">
+              <i class="fa fa-chevron-left f-22 p-r-5"></i>
+            </a>
+            {{currentIndex + 1}} of {{employees.length}}
+            <a (click)="onChange(nextIndex)">
+              <i class="fa fa-chevron-right f-22 p-r-5"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -50,25 +56,6 @@
     <div class="card">
 
       <div class="card-body">
-        Body
-        <div class="form-group p-t-35 v-top pull-right rolodex">
-          <span class="block">
-
-            <a id="btnPrevious" title="Previous" class="aspNetDisabled">
-              <i class="fa fa-chevron-left f-22 p-r-5"></i>
-            </a>
-
-
-            <span id="lblCurrentRow" class="f-16 f-w-600 m-0 v-top text-tranform-lower" for="label">1</span>
-            <label class="f-16 f-w-600 m-0 v-top text-tranform-lower">of</label>
-            <span id="lblTotalCount" class="f-16 f-w-600 m-0 v-top text-tranform-lower" for="label">28</span>
-            <a id="btnNext" title="Next" href="javascript:__doPostBack('ctl00$MainContent$btnNext','')">
-              <i class="fa fa-chevron-right f-22 p-l-5"></i>
-            </a>
-
-          </span>
-        </div>
-
 
       </div>
     </div>
